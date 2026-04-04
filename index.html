@@ -1,14 +1,67 @@
-<!--  بداية الانطلاقة باذن الله تعالى -->
+<!-- بداية الانطلاقة باذن الله تعالى -->
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<title>Elite Dev</title>
+<link rel="stylesheet" href="/style/syle.css">
 </head>
+
 <body>
-    
+
+<div class="cursor-glow"></div>
+
+<header>
+  <h1 class="logo">TAIF</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Work</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2 class="typing"></h2>
+  <p>Building scalable systems & impactful digital experiences</p>
+  <button onclick="scrollToProjects()">Explore Work</button>
+</section>
+
+<section id="about" class="glass">
+  <h2>About Me</h2>
+  <p>
+    I design and build high-performance systems, automation tools,
+    and data-driven applications. Focused on scalability, performance,
+    and clean architecture.
+  </p>
+</section>
+
+<section id="projects">
+  <h2 class="section-title">Selected Work</h2>
+
+  <div class="project">
+    <h3>Automation Engine</h3>
+    <p>Advanced Python automation system reducing manual work by 80%</p>
+  </div>
+
+  <div class="project">
+    <h3>AI Data Analyzer</h3>
+    <p>Data analysis tool with intelligent insights</p>
+  </div>
+
+  <div class="project">
+    <h3>Web Platform</h3>
+    <p>Scalable web app built with Flask architecture</p>
+  </div>
+
+</section>
+
+<section id="contact" class="glass">
+  <h2>Contact</h2>
+  <p>Email: your@email.com</p>
+</section>
+
+<script src="scripts/app.js"></script>
 </body>
 </html>

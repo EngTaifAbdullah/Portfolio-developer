@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  position: sticky;
+  top: 0;
+
+  /* ✅ مهم: شفافية عشان يشتغل blur */
+  background: rgba(15, 23, 42, 0.6);
+
+  /* ✅ إصلاح المشكلة */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+  color: #22d3ee;
+}
+
+nav a {
+  margin-left: 20px;
+  color: #94a3b8;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #22d3ee;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero h2 {
+  font-size: 48px;
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* GLASS SECTIONS */
+.glass {
+  margin: 40px;
+  padding: 40px;
+
+  background: rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* PROJECTS */
+.section-title {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.project {
+  margin: 30px auto;
+  padding: 25px;
+  width: 60%;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.8);
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #22d3ee;
+}
+
+/* CURSOR GLOW */
+.cursor-glow {
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #22d3ee55, transparent);
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
