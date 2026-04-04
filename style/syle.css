@@ -1,12 +1,41 @@
+/* ===== SPACE BACKGROUND ===== */
+#space {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: #020617;
+}
+/* ======================
+
+
+*/
+/* ======= BODY ======= */
 body {
   margin: 0;
+  font-family: 'Segoe UI', sans-serif;
   background: radial-gradient(circle at top, #0f172a, #020617);
   color: white;
-  font-family: 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
-/* HEADER */
+/* ======= LOADER ======= */
+.loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #020617;
+  z-index: 999;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+/* ======= HEADER / NAV ======= */
 header {
   display: flex;
   justify-content: space-between;
@@ -14,95 +43,140 @@ header {
   position: sticky;
   top: 0;
 
-  /* ✅ مهم: شفافية عشان يشتغل blur */
-  background: rgba(15, 23, 42, 0.6);
-
-  /* ✅ إصلاح المشكلة */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15,23,42,0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-radius: 0 0 15px 15px;
+  z-index: 100;
 }
 
 .logo {
   color: #22d3ee;
+  font-weight: bold;
+  font-size: 24px;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 25px;
   color: #94a3b8;
   text-decoration: none;
+  font-weight: 500;
+  padding: 8px 15px;
+  border-radius: 8px;
   transition: 0.3s;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #22d3ee;
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 nav a:hover {
   color: #22d3ee;
+  background: rgba(34,211,238,0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 0 15px #22d3ee80, 0 0 25px #a78bfa50;
 }
 
-/* HERO */
+/* ======= HERO ======= */
 .hero {
   text-align: center;
   padding: 120px 20px;
 }
 
 .hero h2 {
-  font-size: 48px;
+  font-size: 50px;
   background: linear-gradient(90deg,#22d3ee,#a78bfa);
   -webkit-background-clip: text;
   color: transparent;
+  margin: 0;
 }
 
-button {
+.hero p {
+  font-size: 20px;
+  margin: 15px 0 30px 0;
+}
+
+/* ======= BUTTON ======= */
+.magnetic {
   margin-top: 20px;
   padding: 12px 25px;
   background: linear-gradient(90deg,#22d3ee,#a78bfa);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: bold;
+  transition: transform 0.2s;
 }
 
-/* GLASS SECTIONS */
+/* ======= GLASS SECTIONS ======= */
 .glass {
   margin: 40px;
   padding: 40px;
-
   background: rgba(255,255,255,0.05);
-
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
   border-radius: 15px;
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* PROJECTS */
+/* ======= PROJECT GRID ======= */
 .section-title {
   text-align: center;
   margin-top: 50px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
 .project {
-  margin: 30px auto;
+  background: rgba(2,6,23,0.8);
   padding: 25px;
-  width: 60%;
-  border-radius: 12px;
-  background: rgba(2, 6, 23, 0.8);
-  transition: 0.3s;
+  border-radius: 15px;
+  transition: 0.4s;
 }
 
 .project:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px #22d3ee;
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 0 40px #22d3ee;
 }
 
-/* CURSOR GLOW */
-.cursor-glow {
+/* ======= REVEAL ON SCROLL ======= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======= CURSOR ======= */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #22d3ee;
   position: fixed;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, #22d3ee55, transparent);
-  pointer-events: none;
   border-radius: 50%;
+  pointer-events: none;
   transform: translate(-50%, -50%);
+  transition: 0.15s ease;
 }
