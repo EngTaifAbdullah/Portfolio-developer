@@ -1,22 +1,29 @@
-// typing
-const text = "I build systems that scale.";
+// ============================== Typing ==============================
+
+const text = "Hello I am TAIF";
 let i = 0;
 
 function typing() {
+  const el = document.querySelector(".typing");
+
+  if (i === 0) el.innerHTML = "";
+
   if (i < text.length) {
-    document.querySelector(".typing").innerHTML += text[i];
+    el.innerHTML += text[i];
     i++;
     setTimeout(typing, 40);
   }
 }
 typing();
 
-// scroll
+
+// ============================== Scroll ==============================
 function scrollToProjects() {
   document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
 }
 
-// reveal on scroll
+
+// ============================== Reveal ==============================
 function reveal() {
   document.querySelectorAll(".reveal").forEach(el => {
     const top = el.getBoundingClientRect().top;
@@ -25,31 +32,40 @@ function reveal() {
     }
   });
 }
-window.addEventListener("scroll", reveal);
 
-// cursor
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal); // 🔥 إصلاح مهم
+
+
+// ============================== Cursor ==============================
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener("mousemove", e => {
-  cursor.style.left = e.clientX + "px";
-  cursor.style.top = e.clientY + "px";
+  if (cursor) {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  }
 });
 
-// magnetic button
+
+// ============================== Magnetic Button ==============================
 const btn = document.querySelector(".magnetic");
 
-btn.addEventListener("mousemove", e => {
-  const rect = btn.getBoundingClientRect();
-  const x = e.clientX - rect.left - rect.width/2;
-  const y = e.clientY - rect.top - rect.height/2;
-  btn.style.transform = `translate(${x*0.2}px, ${y*0.2}px)`;
-});
+if (btn) {
+  btn.addEventListener("mousemove", e => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width/2;
+    const y = e.clientY - rect.top - rect.height/2;
+    btn.style.transform = `translate(${x*0.2}px, ${y*0.2}px)`;
+  });
 
-btn.addEventListener("mouseleave", () => {
-  btn.style.transform = "translate(0,0)";
-});
+  btn.addEventListener("mouseleave", () => {
+    btn.style.transform = "translate(0,0)";
+  });
+}
 
 
+// ============================== 🚀 AI BACKGROUND ==============================
 
 const canvas = document.getElementById("space");
 const ctx = canvas.getContext("2d");
@@ -57,41 +73,115 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let stars = [];
+let particles = [];
+const mouse = { x: null, y: null };
 
-for (let i = 0; i < 150; i++) {
-  stars.push({
+
+// ============================== إنشاء النقاط==============================
+for (let i = 0; i < 120; i++) {
+  particles.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    size: Math.random() * 2,
-    speed: Math.random() * 0.5
+    vx: (Math.random() - 0.5) * 0.6,
+    vy: (Math.random() - 0.5) * 0.6
   });
 }
+// ==========================================================================
 
-function animateStars() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  stars.forEach(star => {
-    star.y += star.speed;
-
-    if (star.y > canvas.height) {
-      star.y = 0;
-      star.x = Math.random() * canvas.width;
-    }
-
+// رسم النقاط
+function drawParticles() {
+  particles.forEach(p => {
     ctx.beginPath();
-    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+    ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
     ctx.fillStyle = "#22d3ee";
     ctx.fill();
   });
-
-  requestAnimationFrame(animateStars);
 }
 
-animateStars();
+// ============================== الربط ==============================
+function connect() {
+  for (let a = 0; a < particles.length; a++) {
+    for (let b = a; b < particles.length; b++) {
 
-/* resize fix */
+      let dx = particles[a].x - particles[b].x;
+      let dy = particles[a].y - particles[b].y;
+      let dist = dx * dx + dy * dy;
+
+      if (dist < 10000) {
+        ctx.strokeStyle = "rgba(34,211,238,0.08)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(particles[a].x, particles[a].y);
+        ctx.lineTo(particles[b].x, particles[b].y);
+        ctx.stroke();
+      }
+
+      // 🔥 تفاعل مع الماوس
+      let dxMouse = particles[a].x - mouse.x;
+      let dyMouse = particles[a].y - mouse.y;
+      let distMouse = dxMouse * dxMouse + dyMouse * dyMouse;
+
+      if (distMouse < 15000) {
+        ctx.strokeStyle = "rgba(167,139,250,0.3)";
+        ctx.beginPath();
+        ctx.moveTo(particles[a].x, particles[a].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.stroke();
+      }
+    }
+  }
+}
+
+
+// ============================== تحديث ==============================
+function update() {
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+  });
+}
+
+
+// ============================== تشغيل ==============================
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawParticles();
+  connect();
+  update();
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+// ============================== Resize ==============================
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
