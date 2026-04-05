@@ -1,4 +1,5 @@
-// ============================== Typing ==============================
+// ======================================= Typing =======================================
+
 
 const text = "Hello I am TAIF";
 let i = 0;
@@ -17,13 +18,17 @@ function typing() {
 typing();
 
 
-// ============================== Scroll ==============================
+// ======================================= Scroll =======================================
+
+// التمرير
 function scrollToProjects() {
   document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
 }
 
 
-// ============================== Reveal ==============================
+// ======================================= Reveal =======================================
+
+// الكشف عن المشاريع
 function reveal() {
   document.querySelectorAll(".reveal").forEach(el => {
     const top = el.getBoundingClientRect().top;
@@ -34,10 +39,12 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
-window.addEventListener("load", reveal); // 🔥 إصلاح مهم
+window.addEventListener("load", reveal); 
 
 
-// ============================== Cursor ==============================
+// ======================================= Cursor =======================================
+
+//  المؤشر الاحترافي
 const cursor = document.querySelector(".cursor");
 
 document.addEventListener("mousemove", e => {
@@ -48,7 +55,9 @@ document.addEventListener("mousemove", e => {
 });
 
 
-// ============================== Magnetic Button ==============================
+// =================================== Magnetic Button ===================================
+
+
 const btn = document.querySelector(".magnetic");
 
 if (btn) {
@@ -65,7 +74,8 @@ if (btn) {
 }
 
 
-// ============================== 🚀 AI BACKGROUND ==============================
+// =================================== AI BACKGROUND ====================================
+
 
 const canvas = document.getElementById("space");
 const ctx = canvas.getContext("2d");
@@ -77,7 +87,9 @@ let particles = [];
 const mouse = { x: null, y: null };
 
 
-// ============================== إنشاء النقاط==============================
+// ================================= Create Points =====================================
+
+
 for (let i = 0; i < 120; i++) {
   particles.push({
     x: Math.random() * canvas.width,
@@ -86,9 +98,11 @@ for (let i = 0; i < 120; i++) {
     vy: (Math.random() - 0.5) * 0.6
   });
 }
-// ==========================================================================
 
-// رسم النقاط
+
+// =============================== Drawing Particles ===================================
+
+
 function drawParticles() {
   particles.forEach(p => {
     ctx.beginPath();
@@ -98,7 +112,10 @@ function drawParticles() {
   });
 }
 
-// ============================== الربط ==============================
+
+// ======================================== Link ========================================
+
+
 function connect() {
   for (let a = 0; a < particles.length; a++) {
     for (let b = a; b < particles.length; b++) {
@@ -116,7 +133,7 @@ function connect() {
         ctx.stroke();
       }
 
-      // 🔥 تفاعل مع الماوس
+      // Active with Cursor
       let dxMouse = particles[a].x - mouse.x;
       let dyMouse = particles[a].y - mouse.y;
       let distMouse = dxMouse * dxMouse + dyMouse * dyMouse;
@@ -133,7 +150,9 @@ function connect() {
 }
 
 
-// ============================== تحديث ==============================
+// ===================================== Update =====================================
+
+
 function update() {
   particles.forEach(p => {
     p.x += p.vx;
@@ -145,7 +164,9 @@ function update() {
 }
 
 
-// ============================== تشغيل ==============================
+// ==================================== Operation ====================================
+
+
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawParticles();
@@ -157,13 +178,15 @@ function animate() {
 animate();
 
 
-// ============================== Resize ==============================
+// ===================================== Resize =====================================
+
+
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
 
-
+// ==================================================================================
 
 
 
