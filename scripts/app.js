@@ -1,5 +1,6 @@
-// ======================================= Typing =======================================
+document.body.classList.add("dark-mode");
 
+// ======================================= Typing =======================================
 
 const text = "Hello I am TAIF";
 let i = 0;
@@ -57,7 +58,6 @@ document.addEventListener("mousemove", e => {
 
 // =================================== Magnetic Button ===================================
 
-
 const btn = document.querySelector(".magnetic");
 
 if (btn) {
@@ -76,19 +76,44 @@ if (btn) {
 
 // =================================== AI BACKGROUND ====================================
 
-
 const canvas = document.getElementById("space");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let particles = [];
-const mouse = { x: null, y: null };
+
+// =============================== Colors per Mode (مهم يكون هنا فوق) ===============================
+let particleColor = "#22d3ee";
+let lineColor = "rgba(34,211,238,0.08)";
+let mouseLineColor = "rgba(167,139,250,0.3)";
+
+
+function updateColors() {
+  if (document.body.classList.contains("dark-mode")) {
+    
+    // 🌙 DARK = اللايت
+    // particleColor = "#22d3ee";
+    particleColor = "#ff4d9d";
+
+    lineColor = "rgba(238, 34, 238, 0.1)";
+    mouseLineColor = "rgba(139, 250, 191, 0.83)";
+
+
+  } else {
+    // ☀️ LIGHT = الدارك
+    particleColor = "#22d3ee";
+    lineColor = "rgba(255,77,157,0.08)";
+    mouseLineColor = "rgba(255,77,157,0.3)";
+  }
+}
+updateColors();
 
 
 // ================================= Create Points =====================================
 
+let particles = [];
+const mouse = { x: null, y: null };
 
 for (let i = 0; i < 120; i++) {
   particles.push({
@@ -102,19 +127,17 @@ for (let i = 0; i < 120; i++) {
 
 // =============================== Drawing Particles ===================================
 
-
 function drawParticles() {
   particles.forEach(p => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-    ctx.fillStyle = "#22d3ee";
+    ctx.fillStyle = particleColor; // ✅ الآن شغال
     ctx.fill();
   });
 }
 
 
 // ======================================== Link ========================================
-
 
 function connect() {
   for (let a = 0; a < particles.length; a++) {
@@ -125,7 +148,7 @@ function connect() {
       let dist = dx * dx + dy * dy;
 
       if (dist < 10000) {
-        ctx.strokeStyle = "rgba(34,211,238,0.08)";
+        ctx.strokeStyle = lineColor; // ✅ تم التعديل
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(particles[a].x, particles[a].y);
@@ -139,7 +162,7 @@ function connect() {
       let distMouse = dxMouse * dxMouse + dyMouse * dyMouse;
 
       if (distMouse < 15000) {
-        ctx.strokeStyle = "rgba(167,139,250,0.3)";
+        ctx.strokeStyle = mouseLineColor; // ✅ تم التعديل
         ctx.beginPath();
         ctx.moveTo(particles[a].x, particles[a].y);
         ctx.lineTo(mouse.x, mouse.y);
@@ -151,7 +174,6 @@ function connect() {
 
 
 // ===================================== Update =====================================
-
 
 function update() {
   particles.forEach(p => {
@@ -166,7 +188,6 @@ function update() {
 
 // ==================================== Operation ====================================
 
-
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   drawParticles();
@@ -180,31 +201,20 @@ animate();
 
 // ===================================== Resize =====================================
 
-
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
 
-// ==================================================================================
 
+// ================================= Dark Mode Toggle =================================
+const toggleBtn = document.getElementById("mode-toggle");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    toggleBtn.textContent =
+      document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+    updateColors(); // 🔥 أهم سطر
+  });
+}
