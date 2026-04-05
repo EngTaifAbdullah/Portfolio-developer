@@ -95,21 +95,20 @@ let mouseLineColor = "rgba(167,139,250,0.3)";
 function updateColors() {
   if (document.body.classList.contains("dark-mode")) {
     
-    // 🌙 DARK = اللايت
-    // particleColor = "#22d3ee";
-    particleColor = "#ff4d9d";
-
-    lineColor = "rgba(238, 34, 238, 0.1)";
-    mouseLineColor = "rgba(139, 250, 191, 0.83)";
+    // 🌙  = اللايت
+    particleColor = "#d946ef"; 
+    lineColor = "rgba(220,38,255,0.08)"; 
+    mouseLineColor = "rgba(236,72,153,0.3)"; 
 
 
   } else {
-    // ☀️ LIGHT = الدارك
+    // ☀️  = الدارك
     particleColor = "#22d3ee";
     lineColor = "rgba(255,77,157,0.08)";
     mouseLineColor = "rgba(255,77,157,0.3)";
   }
 }
+
 updateColors();
 
 
