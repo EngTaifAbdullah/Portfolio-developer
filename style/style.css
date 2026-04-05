@@ -67,7 +67,7 @@ header {
 }
 
 .logo {
-  color: #22d3ee;
+  color: #22ee22;
   font-weight: bold;
   font-size: 24px;
 }
@@ -114,7 +114,7 @@ nav a:hover {
 
 .hero h2 {
   font-size: 50px;
-  background: linear-gradient(90deg,#22d3ee,#ce0570);
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
   -webkit-background-clip: text;
   color: transparent;
   margin: 0;
@@ -140,17 +140,25 @@ nav a:hover {
 .magnetic:hover {
   box-shadow: 0 0 20px #22d3ee, 0 0 40px #a78bfa;
 }
-
+/* 
 /* ======= GLASS SECTIONS ======= */
 .glass {
   margin: 40px;
   padding: 40px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 15px;
   border: 1px solid rgba(255,255,255,0.08);
 }
+
+.glass:hover{
+
+  transform: translateY(-15px) scale(1.05) rotateX(2deg) rotateY(2deg);
+  box-shadow: 0 0 50px #22d3ee, 0 0 30px #a78bfa;
+  perspective: 1000px; /* 👈 يعطي إحساس 3D عند hover */
+
+} */
 
 /* ======= TECH STACK ======= */
 .skills {
