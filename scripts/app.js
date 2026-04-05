@@ -1,4 +1,7 @@
-document.body.classList.add("dark-mode");
+window.addEventListener("DOMContentLoaded", () => {
+  updateColors(); // يحدث ألوان النقاط مباشرة على الوضع الافتراضي الفاتح
+});
+
 
 // ======================================= Typing =======================================
 
