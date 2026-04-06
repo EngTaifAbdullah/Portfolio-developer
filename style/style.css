@@ -24,7 +24,6 @@
     radial-gradient(circle at 80% 70%, rgba(167,139,250,0.1), transparent 40%);
 }
 
-
 /* ========================================== BODY ========================================== */
 
 body {
@@ -36,7 +35,6 @@ body {
   /* to ACTIVE the professional button*/
   cursor: none;
 }
-
 
 /* ========================================== LOADER ========================================== */
 
@@ -53,7 +51,6 @@ body {
 @keyframes fadeOut {
   to { opacity: 0; visibility: hidden; }
 }
-
 
 /* ========================================= HEADER / NAV ========================================= */
 
@@ -72,11 +69,21 @@ header {
   z-index: 100;
 }
 
+#mode-toggle {
+  background: transparent;   
+  border: none;            
+  outline: none;            
+  cursor: pointer;
+  font-size: 20px;           
+  color: inherit;           
+}
+
 .logo {
   color: #b3a50b;
   font-weight: bold;
   font-size: 24px;
 }
+
 
 /* NAV LINKS */
 nav a {
@@ -112,8 +119,8 @@ nav a:hover {
   box-shadow: 0 0 15px #22d3ee80, 0 0 25px #a78bfa50;
 }
 
-
 /* =========================================== HERO =========================================== */
+
 
 .hero {
   text-align: center;
@@ -133,7 +140,6 @@ nav a:hover {
   margin: 15px 0 30px 0;
 }
 
-
 /* ========================================== BUTTON ========================================== */
 
 /* Main button */
@@ -152,7 +158,6 @@ nav a:hover {
   box-shadow: 0 0 20px #22d3ee, 0 0 40px #fa8bda;
 }
 
-
 /* ====================================== GLASS SECTIONS ====================================== */
 
 .glass {
@@ -168,10 +173,9 @@ nav a:hover {
 .glass:hover{
   transform: translateY(-15px) scale(1.05) rotateX(2deg) rotateY(2deg);
   box-shadow: 0 0 50px #22d3ee, 0 0 30px #a78bfa;
-  perspective: 1000px; /* 👈 يعطي إحساس 3D عند hover */
+  perspective: 1000px; 
 
 } */
-
 
 /* ====================================== TECH STACK ====================================== */
 
@@ -220,7 +224,6 @@ nav a:hover {
   font-size: 30px;
 }
 
-
 /* ====================================== PROJECT GRID ====================================== */
 
 .grid {
@@ -250,7 +253,6 @@ nav a:hover {
   box-shadow: 0 0 25px #22d3ee, 0 0 15px #a78bfa;
 }
 
-
 /* ====================================== REVEAL ON SCROLL ====================================== */
 
 .reveal {
@@ -263,7 +265,6 @@ nav a:hover {
   opacity: 1;
   transform: translateY(0);
 }
-
  
 /* =========================================== CURSOR ========================================== */
 
@@ -279,30 +280,34 @@ nav a:hover {
   transition: 0.15s ease;
 }
 
+/* ======================================== LIGHT MODE ======================================== */
 
-
-
-
-
-/* ====================================== DARK MODE ====================================== */
-
+/*main font */
 body.dark-mode {
   background: #f0f0f0;
   color: #111;
 }
+
+/* nav bar and borders ------------------------------------ */
 
 body.dark-mode header {
   background: rgba(255,255,255,0.6);
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
+/* Logo --------------------------------------------------- */
+
 body.dark-mode .logo {
   color: #6366f1;
 }
 
+/* MENU --------------------------------------------------- */
+
 body.dark-mode nav a {
-  color: #1f2937;
+  color: #06ff76;
 }
+
+/* color font for MENU ------------------------------------ */
 
 body.dark-mode nav a:hover {
   color: #6366f1;
@@ -310,46 +315,68 @@ body.dark-mode nav a:hover {
   box-shadow: 0 0 15px #6366f180, 0 0 25px #a78bfa50;
 }
 
+/* glasses and transperancy ------------------------------ */
+
 body.dark-mode .glass {
-  background: rgba(0,0,0,0.05);
+  background: rgba(4, 241, 63, 0.05);
   border: 1px solid rgba(0,0,0,0.1);
 }
+
+/* card project ------------------------------------------ */
 
 body.dark-mode .project {
   background: rgba(220,220,220,0.8);
 }
 
+/* الوهج للبروجكت ---------------------------------------*/
+
 body.dark-mode .project:hover {
   box-shadow: 0 0 50px #6366f1, 0 0 30px #a78bfa;
 }
 
+/* لون المؤشر ------------------------------------------ */
+
 body.dark-mode .cursor {
-  border: 2px solid #6366f1;
+  border: 2px solid #06ad00;
 }
 
+/* الزر الرئيسي -----------------------------------------*/
+
 body.dark-mode .magnetic {
-  background: linear-gradient(90deg,#6366f1,#a78bfa);
+  background: linear-gradient(90deg,#b60433,#d8f003);
 }
 
 body.dark-mode .magnetic:hover {
-  box-shadow: 0 0 20px #6366f1, 0 0 40px #fa8bda;
+  box-shadow: 0 0 20px #000147, 0 0 40px #1eff00;
 }
+
+/* لون الايقونات وبوردرها  ----------------------------- */
 
 body.dark-mode .icon {
   background: rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(17, 0, 0, 0.1);
 }
 
 body.dark-mode .icon:hover {
-  box-shadow: 0 0 20px #6366f1;
+  box-shadow: 0 0 20px #000000;
 }
 
+/* Background color spase -------------------------------- */
+
 body.dark-mode .stats h2 {
-  color: #6366f1;
+  color: #019f2e;
+}
+
+body.dark-mode .hero h2 {
+  font-size: 50px;
+  background: linear-gradient(90deg,#a808c4,#44b805);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin: 0;
 }
 
 body.dark-mode #space {
-  background: radial-gradient(circle at center, #e0e0e0 0%, #fff 100%);
+  background: radial-gradient(circle at center, #a4f0c1 0%, #eb04b9 100%);
 }
 
 body.dark-mode #space::after {
@@ -357,8 +384,16 @@ body.dark-mode #space::after {
     radial-gradient(circle at 20% 30%, rgba(99,102,241,0.1), transparent 40%),
     radial-gradient(circle at 80% 70%, rgba(167,139,250,0.1), transparent 40%);
 }
-/* ============================================================================================= */
+/* ================================================================================================ */
+
+/* الدرجه الغامقه 
+
+8d6a4d
+
+*/
 
 
+/* الدرجه الفاتحه 
 
-
+c69740
+*/

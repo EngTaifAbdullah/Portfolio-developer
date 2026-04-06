@@ -5,21 +5,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ======================================= Typing =======================================
 
-const text = "Hello I am TAIF";
-let i = 0;
+// const text = "Hello I am TAIF";
+// let i = 0;
 
-function typing() {
-  const el = document.querySelector(".typing");
+// function typing() {
+//   const el = document.querySelector(".typing");
 
-  if (i === 0) el.innerHTML = "";
+//   if (i === 0) el.innerHTML = "";
 
-  if (i < text.length) {
-    el.innerHTML += text[i];
-    i++;
-    setTimeout(typing, 40);
-  }
-}
-typing();
+//   if (i < text.length) {
+//     el.innerHTML += text[i];
+//     i++;
+//     setTimeout(typing, 40);
+//   }
+// }
+// typing();
 
 
 // ======================================= Scroll =======================================
@@ -87,6 +87,7 @@ canvas.height = window.innerHeight;
 
 
 // =============================== Colors per Mode (مهم يكون هنا فوق) ===============================
+
 let particleColor = "#22d3ee";
 let lineColor = "rgba(34,211,238,0.08)";
 let mouseLineColor = "rgba(167,139,250,0.3)";
@@ -104,8 +105,8 @@ function updateColors() {
   } else {
     // ☀️  = الدارك
     particleColor = "#22d3ee";
-    lineColor = "rgba(255,77,157,0.08)";
-    mouseLineColor = "rgba(255,77,157,0.3)";
+    lineColor = "rgba(77, 187, 255, 0.08)";
+    mouseLineColor = "rgba(77, 228, 255, 0.3)";
   }
 }
 
@@ -210,13 +211,14 @@ window.addEventListener("resize", () => {
 
 
 // ================================= Dark Mode Toggle =================================
+
 const toggleBtn = document.getElementById("mode-toggle");
 
 if (toggleBtn) {
   toggleBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     toggleBtn.textContent =
-      document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-    updateColors(); // 🔥 أهم سطر
+      document.body.classList.contains("dark-mode") ? "🌙" : "☀️";
+    updateColors(); 
   });
 }
