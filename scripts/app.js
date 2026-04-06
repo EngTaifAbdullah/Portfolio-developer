@@ -201,3 +201,77 @@ if (toggleBtn) {
   });
 }
 // ====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const text1 = "Hello, I'm ";
+const text2 = "TAIF";
+
+let i = 0;
+let j = 0;
+let isDeleting = false;
+
+const textEl = document.querySelector(".text");
+const nameEl = document.querySelector(".name");
+
+function typeLoop() {
+
+  if (!isDeleting) {
+    // يكتب
+    if (i < text1.length) {
+      textEl.textContent += text1[i];
+      i++;
+      return setTimeout(typeLoop, 40);
+    }
+
+    if (j < text2.length) {
+      nameEl.textContent += text2[j];
+      j++;
+      return setTimeout(typeLoop, 70);
+    }
+
+    // توقف قبل الحذف
+    isDeleting = true;
+    return setTimeout(typeLoop, 1500);
+  }
+
+  else {
+    // يمسح
+    if (j > 0) {
+      nameEl.textContent = text2.substring(0, j - 1);
+      j--;
+      return setTimeout(typeLoop, 40);
+    }
+
+    if (i > 0) {
+      textEl.textContent = text1.substring(0, i - 1);
+      i--;
+      return setTimeout(typeLoop, 25);
+    }
+
+    // يعيد من البداية
+    isDeleting = false;
+    return setTimeout(typeLoop, 400);
+  }
+}
+
+typeLoop();
+
+

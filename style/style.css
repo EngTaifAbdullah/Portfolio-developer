@@ -413,3 +413,47 @@ body.dark-mode #space::after {
 
 c69740
 */
+
+
+
+
+
+
+
+
+
+.typing {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* النص العادي */
+.typing .text {
+  color: #22d3ee; /* نفس لون hero في الوضع الفاتح */
+}
+
+
+
+/* المؤشر */
+.typing::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Dark Mode Overrides */
+body.dark-mode .typing .text {
+  color: #1f2937; /* نفس لون hero الوضع الداكن */
+}
+
+body.dark-mode .typing .name {
+  background: linear-gradient(90deg, #ec4899, #f472b6, #a855f7); /* ألوان hero span الداكن صحيحة */
+  -webkit-background-clip: text;
+  color: transparent;
+}
