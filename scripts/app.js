@@ -77,9 +77,9 @@ function updateColors() {
   if (document.body.classList.contains("dark-mode")) {
     
     // 🌙  = اللايت
-    particleColor = "#926718"; 
-    lineColor = "rgba(139, 100, 0, 0.21)"; 
-    mouseLineColor = "rgba(236,72,153,0.3)"; 
+    particleColor = "#2e2e99"; 
+    lineColor = "rgba(86, 163, 194, 0.21)"; 
+    mouseLineColor = "rgba(245, 12, 12, 0.3)"; 
 
 
   } else {
@@ -200,26 +200,7 @@ if (toggleBtn) {
     updateColors(); 
   });
 }
-// ====================================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// ================================ Typing Text ======================================
 
 const text1 = "Hello, I'm ";
 const text2 = "TAIF";
@@ -274,4 +255,5 @@ function typeLoop() {
 
 typeLoop();
 
+// ===================================================================================
 

@@ -152,10 +152,11 @@ nav a:hover {
 /* Main button */
 .magnetic {
   margin-top: 20px;
-  padding: 12px 25px;
   background: linear-gradient(90deg,#22d3ee,#a78bfa);
   border: none;
-  border-radius: 10px;
+  padding: 18px 30px;
+  font-size: 19px;
+  border-radius: 16px;
   cursor: pointer;
   font-weight: bold;
   transition: transform 0.2s, box-shadow 0.3s;
@@ -285,135 +286,6 @@ nav a:hover {
   transition: 0.15s ease;
 }
 
-/* ======================================== LIGHT MODE ======================================== */
-
-/* Hello */
-body.dark-mode .hero h2 {
-  background: linear-gradient(90deg, #1f2937, #6b7280);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-/* Name ----------------------------------------------------*/
-
-body.dark-mode .hero span {
-  background: linear-gradient(90deg, #ec4899, #f472b6, #a855f7);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-/* main font ----------------------------------------------- */
-
-body.dark-mode {
-  background: #fdfaf6; /* كريمي فاخر */
-  color: #374151; /* رمادي احترافي */
-}
-
-/* nav bar and borders ------------------------------------ */
-
-body.dark-mode header {
-  background: rgba(210, 125, 207, 0.256);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-/* Logo --------------------------------------------------- */
-
-body.dark-mode .logo {
-  color: #ec4899;
-}
-
-/* MENU --------------------------------------------------- */
-
-body.dark-mode nav a {
-  color: #4b5563;
-}
-
-/* color font for MENU ------------------------------------ */
-
-body.dark-mode nav a:hover {
-  color: #ec4899;
-  background: rgba(236,72,153,0.08);
-  box-shadow: 0 0 15px rgba(236,72,153,0.25);
-}
-
-/* glasses and transparency ------------------------------ */
-
-body.dark-mode .glass {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-/* card project ------------------------------------------ */
-
-body.dark-mode .project {
-  background: rgba(255,255,255,0.8);
-}
-
-/* الوهج للبروجكت ---------------------------------------*/
-
-body.dark-mode .project:hover {
-  box-shadow: 0 0 40px rgba(236,72,153,0.25), 0 0 20px rgba(168,85,247,0.2);
-}
-
-/* لون المؤشر ------------------------------------------ */
-
-body.dark-mode .cursor {
-  border: 2px solid #ec4899;
-}
-
-/* الزر الرئيسي -----------------------------------------*/
-
-body.dark-mode .magnetic {
-  background: linear-gradient(90deg,#ec4899,#a855f7);
-}
-
-body.dark-mode .magnetic:hover {
-  box-shadow: 0 0 20px rgba(236,72,153,0.5), 0 0 40px rgba(168,85,247,0.4);
-}
-
-/* لون الايقونات وبوردرها  ----------------------------- */
-
-body.dark-mode .icon {
-  background: rgba(255,255,255,0.6);
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-body.dark-mode .icon:hover {
-  box-shadow: 0 0 20px rgba(236,72,153,0.3);
-}
-
-/* Background color space -------------------------------- */
-
-body.dark-mode .stats h2 {
-  color: #ec4899;
-}
-
-body.dark-mode #space {
-  background: radial-gradient(circle at center, #fff7fb 0%, #fde2f3 100%);
-}
-
-body.dark-mode #space::after {
-  background:
-    radial-gradient(circle at 20% 30%, rgba(236,72,153,0.12), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(168,85,247,0.12), transparent 40%);
-}
-
-/* Contact me -------------------------------- */
-
-.dark-mode .contact img.contact {
-  filter: brightness(0.9);
-}
-
-.dark-mode .contact-form button {
-  background: #5a2b4f85;
-  color: #fff;
-}
-.dark-mode .contact-form button:hover {
-  background: #838182;
-}
-
 /* ==================================== Typing ================================================ */
 
 .typing {
@@ -439,16 +311,6 @@ body.dark-mode #space::after {
   25%, 75% { opacity: 0; }
 }
 
-/* Dark Mode Overrides */
-body.dark-mode .typing .text {
-  color: #1f2937; /* نفس لون hero الوضع الداكن */
-}
-
-body.dark-mode .typing .name {
-  background: linear-gradient(90deg, #ec4899, #f472b6, #a855f7); /* ألوان hero span الداكن صحيحة */
-  -webkit-background-clip: text;
-  color: transparent;
-}
 
 /* =========================================== Contact ========================================= */
 
@@ -517,6 +379,138 @@ body.dark-mode .typing .name {
 .social-links img:hover {
   transform: scale(1.2);
 }
+
+
+/* ======================================== LIGHT MODE ======================================== */
+
+/* Dark Mode Overrides */
+body.dark-mode .typing .text {
+  color: #1f2937; /* نفس لون hero الوضع الداكن */
+}
+
+body.dark-mode .typing .name {
+  background: linear-gradient(90deg, #211f76af, #407192, #3d8fad); /* ألوان hero span الداكن صحيحة */
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* main font ----------------------------------------------- */
+
+body.dark-mode {
+  background: #fdfaf6; 
+  color: #374151; 
+}
+
+/* nav bar and borders ------------------------------------ */
+
+body.dark-mode header {
+  background: linear-gradient(90deg,#0f104880,#1e1549c7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Logo --------------------------------------------------- */
+
+body.dark-mode .logo {
+  color: #ffffff;
+}
+
+/* MENU --------------------------------------------------- */
+
+body.dark-mode nav a {
+  color: #ffffff;
+}
+
+/* color font for MENU ------------------------------------ */
+
+body.dark-mode nav a:hover {
+  color: #ffffff;
+  background: rgba(236,72,153,0.08);
+  box-shadow: 0 0 15px rgba(236,72,153,0.25);
+}
+
+/* glasses and transparency ------------------------------ */
+
+body.dark-mode .glass {
+  background: rgba(255, 255, 255, 0.26);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* card project ------------------------------------------ */
+
+body.dark-mode .project {
+  background: rgba(255, 255, 255, 0.26);
+}
+
+/* الوهج للبروجكت ---------------------------------------*/
+
+body.dark-mode .project:hover {
+  box-shadow: 0 0 40px rgba(236,72,153,0.25), 0 0 20px rgba(168,85,247,0.2);
+}
+
+/* لون المؤشر ------------------------------------------ */
+
+body.dark-mode .cursor {
+  border: 2px solid #374151;
+}
+
+/* الزر الرئيسي -----------------------------------------*/
+
+body.dark-mode .magnetic {
+  background: linear-gradient(90deg,#0f104880,#1e1549c7);
+  color: #ffffff;
+  padding: 18px 30px;
+  font-size: 19px;
+  border-radius: 16px;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+body.dark-mode .magnetic:hover {
+  box-shadow: 0 0 20px rgba(236,72,153,0.5), 0 0 40px rgba(168,85,247,0.4);
+}
+
+/* لون الايقونات وبوردرها  ----------------------------- */
+
+body.dark-mode .icon {
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark-mode .icon:hover {
+  box-shadow: 0 0 20px rgba(236,72,153,0.3);
+}
+
+/* Background color space -------------------------------- */
+
+body.dark-mode .stats h2 {
+  color: #374151;
+}
+
+body.dark-mode #space {
+  background: radial-gradient(circle at center, #7ba1dd70 0%, #7ba1dd50 100%);
+}
+
+body.dark-mode #space::after {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(236,72,153,0.12), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(168,85,247,0.12), transparent 40%);
+}
+
+/* Contact me -------------------------------- */
+
+.dark-mode .contact img.contact {
+  filter: brightness(0.9);
+}
+
+.dark-mode .contact-form button {
+  background: linear-gradient(90deg,#0f104880,#1e1549c7);
+  color: #fff;
+}
+.dark-mode .contact-form button:hover {
+  background: #838182;
+}
+
 
 /* ============================================================================================== */
 
