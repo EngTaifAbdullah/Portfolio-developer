@@ -386,11 +386,11 @@ nav a:hover {
 
 /* Dark Mode Overrides */
 body.dark-mode .typing .text {
-  color: #1f2937; /* نفس لون hero الوضع الداكن */
+  color: #1f2937; 
 }
 
 body.dark-mode .typing .name {
-  background: linear-gradient(90deg, #211f76af, #407192, #3d8fad); /* ألوان hero span الداكن صحيحة */
+  background: linear-gradient(90deg, #211f76af, #407192, #3d8fad); 
   -webkit-background-clip: text;
   color: transparent;
 }
