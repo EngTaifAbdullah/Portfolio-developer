@@ -1,29 +1,27 @@
 <!-- بداية الانطلاقة باذن الله تعالى -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Taif Alanzi</title>
 <link rel="stylesheet" href="./style/style.css">
 </head>
 
-<!--========================================= BODY =========================================-->
-
-
 <body>
 
+<!-- Loader -->
 <div class="loader"></div>
+
+<!-- Custom Cursor -->
 <div class="cursor"></div>
+
+<!-- Space Background Canvas -->
 <canvas id="space"></canvas>
 
-
-<!--================================== HEADER AND NAV BAR ==================================-->
-
+<!--================================== HEADER AND NAV ==================================-->
 
 <header>
   <h1 class="logo">TA</h1>
@@ -35,10 +33,7 @@
   <button id="mode-toggle">☀️</button> 
 </header>
 
-
-
 <!--=========================================== HERO =========================================-->
-
 
 <section class="hero">
   <h2 class="typing">
@@ -48,21 +43,15 @@
   <button class="magnetic" onclick="scrollToProjects()">Explore Work</button>
 </section>
 
-
 <!--========================================== ABOUT ==========================================-->
-
 
 <section id="about" class="glass reveal">
   <h2>About Me</h2>
   <p>I build scalable systems, automation tools, and impactful solutions.</p>
 
-
-  <!--======================================= TECH STACK ========================================-->
-
-
+  <!-- Tech Stack -->
   <div class="skills">
     <h3>Tech Stack</h3>
-
     <div class="icons">
       <div class="icon">🐍 Python</div>
       <div class="icon">🌐 HTML</div>
@@ -73,64 +62,45 @@
     </div>
   </div>
 
-
-  <!--========================================== STATS ===========================================-->
-
-
+  <!-- Stats -->
   <div class="stats">
     <div>
       <h2>10+</h2>
       <p>Projects</p>
     </div>
-
     <div>
       <h2>3+</h2>
       <p>Years Learning</p>
     </div>
-
     <div>
       <h2>∞</h2>
       <p>Passion</p>
     </div>
   </div>
-
 </section>
 
-
-<!--========================================== PROJECTS =============================================-->
-
+<!--========================================== PROJECTS =========================================-->
 
 <section id="projects">
   <h2 class="section-title reveal">Selected Work</h2>
-
   <div class="grid">
-
     <div class="project reveal">
       <h3>Automation Engine</h3>
       <p>Reduced manual work by 80%</p>
     </div>
-
-
     <div class="project reveal">
       <h3>AI Analyzer</h3>
       <p>Advanced data insights</p>
     </div>
-
-
     <div class="project reveal">
       <h3>Web Platform</h3>
       <p>Scalable Flask system</p>
     </div>
-
   </div>
 </section>
 
+<!--========================================== WHY HIRE ME =========================================-->
 
-<!--========================================== WHY HIRE ME ===========================================-->
-
-
-<div class="skills">
-    
 <section class="glass reveal">
   <h2>Why Hire Me?</h2>
   <p>
@@ -139,20 +109,42 @@
   </p>
 </section>
 
-</div>
-
-
 <!--============================================= CONTACT =============================================-->
-
 
 <section id="contact" class="glass reveal">
   <h2>Contact</h2>
-  <p>Email: Eng.taifabdullah@gmail.com </p>
+  <form action="https://getform.io/f/brogxmpa" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="social-links">
+    <a href="https://github.com/EngTaifAbdulla" target="_blank">
+      <img src="./images/lined.png" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/EngTaifAbdullah" target="_blank">
+      <img src="./images/github.png" alt="GitHub">
+    </a>
+    <a href="https://wa.me/966551369346" target="_blank">
+      <img src="./images/whats.png" alt="WhatsApp">
+    </a>
+    <a href="mailto:Eng.TaifAbdullah@gmail.com">
+      <img src="./images/gmail.png" alt="Email">
+    </a>
+  </div>
 </section>
+
+<!--============================================= FOOTER =============================================-->
+
+<footer class="glass">
+  <p>&copy; 2026 Taif Alanzi. All Rights Reserved.</p>
+  </div>
+</footer>
 
 <script src="./scripts/app.js"></script>
 </body>
 </html>
 
-
-<!-- ================================================================================================ -->
+<!-- ==================================================================================================-->
