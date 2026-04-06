@@ -129,7 +129,7 @@ nav a:hover {
 
 /* name in dark */
 .hero span {
-  background: linear-gradient(90deg, #011854, #7675ac);
+  background: linear-gradient(90deg, #3d4043d6, #666b6f, #737d877f); 
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -152,18 +152,19 @@ nav a:hover {
 /* Main button */
 .magnetic {
   margin-top: 20px;
-  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  background: linear-gradient(90deg,#025865c8,#13077fa1);
   border: none;
   padding: 18px 30px;
   font-size: 19px;
   border-radius: 16px;
   cursor: pointer;
+  color: #ffffff;
   font-weight: bold;
   transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .magnetic:hover {
-  box-shadow: 0 0 20px #22d3ee, 0 0 40px #fa8bda;
+  box-shadow: 0 0 20px #0a616e, 0 0 40px #1e0147;
 }
 
 /* ====================================== GLASS SECTIONS ====================================== */
@@ -352,8 +353,8 @@ nav a:hover {
 }
 
 .contact-form button {
-  background: linear-gradient(90deg,#22d3ee,#a78bfa);
-  color: #000000;
+  background: linear-gradient(90deg,#025865c8,#13077fa1);
+  color: #ffffff;
   padding: 12px;
   border: none;
   border-radius: 10px;
@@ -363,7 +364,7 @@ nav a:hover {
 }
 
 .contact-form button:hover {
-  box-shadow: 0 0 20px #22d3ee, 0 0 40px #fa8bda;
+  background: linear-gradient(90deg,#025865c8,#13077fa1);
 }
 
 .social-links {
