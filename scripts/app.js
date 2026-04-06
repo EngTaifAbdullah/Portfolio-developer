@@ -3,25 +3,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// ======================================= Typing =======================================
-
-// const text = "Hello I am TAIF";
-// let i = 0;
-
-// function typing() {
-//   const el = document.querySelector(".typing");
-
-//   if (i === 0) el.innerHTML = "";
-
-//   if (i < text.length) {
-//     el.innerHTML += text[i];
-//     i++;
-//     setTimeout(typing, 40);
-//   }
-// }
-// typing();
-
-
 // ======================================= Scroll =======================================
 
 // التمرير
@@ -76,7 +57,6 @@ if (btn) {
   });
 }
 
-
 // =================================== AI BACKGROUND ====================================
 
 const canvas = document.getElementById("space");
@@ -86,7 +66,7 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 
-// =============================== Colors per Mode (مهم يكون هنا فوق) ===============================
+// ================================= Colors per Mode  ===================================
 
 let particleColor = "#22d3ee";
 let lineColor = "rgba(34,211,238,0.08)";
@@ -97,8 +77,8 @@ function updateColors() {
   if (document.body.classList.contains("dark-mode")) {
     
     // 🌙  = اللايت
-    particleColor = "#d946ef"; 
-    lineColor = "rgba(220,38,255,0.08)"; 
+    particleColor = "#926718"; 
+    lineColor = "rgba(139, 100, 0, 0.21)"; 
     mouseLineColor = "rgba(236,72,153,0.3)"; 
 
 
@@ -109,7 +89,6 @@ function updateColors() {
     mouseLineColor = "rgba(77, 228, 255, 0.3)";
   }
 }
-
 updateColors();
 
 
@@ -134,7 +113,7 @@ function drawParticles() {
   particles.forEach(p => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, 2, 0, Math.PI * 2);
-    ctx.fillStyle = particleColor; // ✅ الآن شغال
+    ctx.fillStyle = particleColor; 
     ctx.fill();
   });
 }
@@ -151,7 +130,7 @@ function connect() {
       let dist = dx * dx + dy * dy;
 
       if (dist < 10000) {
-        ctx.strokeStyle = lineColor; // ✅ تم التعديل
+        ctx.strokeStyle = lineColor; 
         ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.moveTo(particles[a].x, particles[a].y);
@@ -165,7 +144,7 @@ function connect() {
       let distMouse = dxMouse * dxMouse + dyMouse * dyMouse;
 
       if (distMouse < 15000) {
-        ctx.strokeStyle = mouseLineColor; // ✅ تم التعديل
+        ctx.strokeStyle = mouseLineColor; 
         ctx.beginPath();
         ctx.moveTo(particles[a].x, particles[a].y);
         ctx.lineTo(mouse.x, mouse.y);
@@ -198,7 +177,6 @@ function animate() {
   update();
   requestAnimationFrame(animate);
 }
-
 animate();
 
 
@@ -222,3 +200,4 @@ if (toggleBtn) {
     updateColors(); 
   });
 }
+// ====================================================================================
