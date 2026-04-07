@@ -152,20 +152,50 @@ nav a:hover {
 /* Main button */
 .magnetic {
   margin-top: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
   background: linear-gradient(90deg,#025865c8,#13077fa1);
-  border: none;
-  padding: 18px 30px;
-  font-size: 19px;
-  border-radius: 16px;
-  cursor: pointer;
   color: #ffffff;
+
+  padding: 18px 35px;
+  font-size: 19px;
   font-weight: bold;
-  transition: transform 0.2s, box-shadow 0.3s;
+
+  border-radius: 400px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
 }
 
+/* Hover */
 .magnetic:hover {
   box-shadow: 0 0 20px #0a616e, 0 0 40px #1e0147;
+  transform: scale(1.05);
 }
+
+/* الأيقونة */
+.magnetic .arrow {
+  transition: transform 0.3s ease;
+}
+
+/* حركة احترافية */
+.magnetic:hover .arrow {
+  transform: translateY(5px);
+}
+.magnetic .arrow {
+  animation: float 1.5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(9px); }
+}
+
 
 /* ====================================== GLASS SECTIONS ====================================== */
 
@@ -427,7 +457,8 @@ body.dark-mode nav a {
 body.dark-mode nav a:hover {
   color: #ffffff;
   background: rgba(236,72,153,0.08);
-  box-shadow: 0 0 15px rgba(236,72,153,0.25);
+  box-shadow: 0 0 40px #1e1549c7;
+
 }
 
 /* glasses and transparency ------------------------------ */
@@ -436,6 +467,11 @@ body.dark-mode .glass {
   background: rgba(255, 255, 255, 0.26);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark-mode .glass:hover {
+  box-shadow: 0 0 40px #1e1549c7;
+
 }
 
 /* card project ------------------------------------------ */
@@ -447,7 +483,7 @@ body.dark-mode .project {
 /* الوهج للبروجكت ---------------------------------------*/
 
 body.dark-mode .project:hover {
-  box-shadow: 0 0 40px rgba(236,72,153,0.25), 0 0 20px rgba(168,85,247,0.2);
+  box-shadow: 0 0 40px #1e1549c7;
 }
 
 /* لون المؤشر ------------------------------------------ */
@@ -461,14 +497,13 @@ body.dark-mode .cursor {
 body.dark-mode .magnetic {
   background: linear-gradient(90deg,#0f104880,#1e1549c7);
   color: #ffffff;
-  padding: 18px 30px;
-  font-size: 19px;
-  border-radius: 16px;
+  padding: 18px 35px;
+  border-radius: 400px;
   transition: transform 0.2s, box-shadow 0.3s;
 }
 
 body.dark-mode .magnetic:hover {
-  box-shadow: 0 0 20px rgba(236,72,153,0.5), 0 0 40px rgba(168,85,247,0.4);
+  box-shadow: 0 0 40px #1e1549c7;
 }
 
 /* لون الايقونات وبوردرها  ----------------------------- */
@@ -479,7 +514,7 @@ body.dark-mode .icon {
 }
 
 body.dark-mode .icon:hover {
-  box-shadow: 0 0 20px rgba(236,72,153,0.3);
+  box-shadow: 0 0 20px #1e1549c7;
 }
 
 /* Background color space -------------------------------- */
@@ -509,7 +544,7 @@ body.dark-mode #space::after {
   color: #fff;
 }
 .dark-mode .contact-form button:hover {
-  background: #838182;
+  box-shadow: 0 0 40px #1e1549c7;
 }
 
 
