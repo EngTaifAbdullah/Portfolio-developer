@@ -34,10 +34,11 @@ body {
 
   /* to ACTIVE the professional button*/
   cursor: none;
-  
 }
 
-
+section {
+  scroll-margin-top: 80px; 
+}
 
 /* ========================================== LOADER ========================================== */
 
@@ -83,7 +84,6 @@ header {
   font-size: 20px;           
   color: inherit;           
 }
-
 
 /* NAV LINKS */
 nav a {
@@ -150,14 +150,11 @@ nav a:hover {
 }
 
 
-
-
 /* ========================================== BUTTON ========================================== */
 
 /* Main button */
 .magnetic {
   margin-top: 20px;
-
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -170,7 +167,6 @@ nav a:hover {
   text-decoration: none;
   border: none;
   cursor: pointer;
-
   transition: all 0.3s ease;
 }
 
@@ -344,7 +340,6 @@ nav a:hover {
   25%, 75% { opacity: 0; }
 }
 
-
 /* =========================================== Contact ========================================= */
 
 .contact {
@@ -473,7 +468,6 @@ body.dark-mode .glass {
 
 body.dark-mode .glass:hover {
   box-shadow: 0 0 40px #1e1549c7;
-
 }
 
 /* card project ------------------------------------------ */
