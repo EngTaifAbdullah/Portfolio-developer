@@ -129,7 +129,7 @@ nav a:hover {
 
 /* name in dark */
 .hero span {
-  background: linear-gradient(90deg, #3d4043d6, #666b6f, #737d877f); 
+  background: linear-gradient(90deg, #13077fa1, #e7e8f547, #13077fa1); 
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -390,7 +390,7 @@ body.dark-mode .typing .text {
 }
 
 body.dark-mode .typing .name {
-  background: linear-gradient(90deg, #211f76af, #407192, #3d8fad); 
+  background: linear-gradient(90deg, #1e1549c7, #524786c7, #1e1549c7); 
   -webkit-background-clip: text;
   color: transparent;
 }
