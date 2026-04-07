@@ -8,6 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taif Alanzi</title>
 <link rel="stylesheet" href="./style/style.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -39,46 +40,59 @@
 
 <!--=========================================== HERO =========================================-->
 
-<section class="hero">
+<section id="home" class="hero">
   <h2 class="typing">
     <span class="text"></span><span class="name"></span>
   </h2>
   <p>Software Developer | Data Analyst</p> 
-  <p></p>
 
-<a href="./images/Taif-CV.pdf" class="magnetic"> My Resume
+  <a href="./images/Taif-CV.pdf" class="magnetic" download> My Resume
 
-  <svg class="arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
-    <!-- السهم -->
-    <path d="M12 4V14" 
-      stroke="currentColor" 
-      stroke-width="3" 
-      stroke-linecap="round"/>
-
-    <path d="M8 10L12 14L16 10" 
-      stroke="currentColor" 
-      stroke-width="3" 
-      stroke-linecap="round" 
-      stroke-linejoin="round"/>
-
-    <!-- الخط -->
-    <path d="M5 20H19" 
-      stroke="currentColor" 
-      stroke-width="3" 
-      stroke-linecap="round"/>
-  </svg>
-</a>
+    <svg class="arrow" width="22" height="22" viewBox="0 0 24 24" fill="none">
+      <path d="M12 4V14" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <path d="M8 10L12 14L16 10" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 20H19" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+  </a>
 </section>
-
-<!--========================================== Home ==========================================-->
-
-<section id="home" class="hero"></section>
 
 <!--========================================== ABOUT ==========================================-->
 
 <section id="about" class="glass reveal">
   <h2>About Me</h2>
-  <p>I build scalable systems, automation tools, and impactful solutions.</p>
+
+  <div class="about-container">
+
+    <!-- Left: Description -->
+    <div class="about-text">
+      <h3>Hi, I'm Taif 👋</h3>
+      <p>
+        I'm a passionate Software Developer focused on building scalable systems,
+        automation tools, and intelligent solutions. I enjoy turning complex problems
+        into simple, efficient, and impactful products.
+      </p>
+
+      <p>
+        I specialize in Python, Web Development, and Data Analysis,
+        and I’m constantly pushing myself to learn and build more advanced systems.
+      </p>
+    </div>
+
+    <!-- Right: Info Cards -->
+    <div class="about-cards">
+
+      <div class="card">
+        <h4><i class="ri-graduation-cap-line"></i> Education</h4>
+        <p>Computer Science</p>
+      </div>
+
+      <div class="card">
+        <h4><i class="ri-bar-chart-line"></i> GPA</h4>
+        <p>4.5 / 5</p>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!--========================================== Skils ==========================================-->
@@ -86,7 +100,6 @@
 <section id="tech" class="glass reveal">
   <h2>Tech Stack</h2>
  
-  <!-- Tech Stack -->
   <div class="skills">
     <div class="icons">
       <div class="icon">🐍 Python</div>
@@ -98,7 +111,6 @@
     </div>
   </div>
 
-  <!-- Stats -->
   <div class="stats">
     <div>
       <h2>10+</h2>
