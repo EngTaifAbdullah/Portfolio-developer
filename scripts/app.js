@@ -2,14 +2,12 @@ window.addEventListener("DOMContentLoaded", () => {
   updateColors(); // يحدث ألوان النقاط مباشرة على الوضع الافتراضي الفاتح
 });
 
-
 // ======================================= Scroll =======================================
 
 // التمرير
 function scrollToProjects() {
   document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
 }
-
 
 // ======================================= Reveal =======================================
 
@@ -26,7 +24,6 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal); 
 
-
 // ======================================= Cursor =======================================
 
 //  المؤشر الاحترافي
@@ -38,7 +35,6 @@ document.addEventListener("mousemove", e => {
     cursor.style.top = e.clientY + "px";
   }
 });
-
 
 // =================================== Magnetic Button ===================================
 
@@ -65,7 +61,6 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-
 // ================================= Colors per Mode  ===================================
 
 let particleColor = "#22d3ee";
@@ -91,7 +86,6 @@ function updateColors() {
 }
 updateColors();
 
-
 // ================================= Create Points =====================================
 
 let particles = [];
@@ -106,7 +100,6 @@ for (let i = 0; i < 120; i++) {
   });
 }
 
-
 // =============================== Drawing Particles ===================================
 
 function drawParticles() {
@@ -117,7 +110,6 @@ function drawParticles() {
     ctx.fill();
   });
 }
-
 
 // ======================================== Link ========================================
 
@@ -154,7 +146,6 @@ function connect() {
   }
 }
 
-
 // ===================================== Update =====================================
 
 function update() {
@@ -167,7 +158,6 @@ function update() {
   });
 }
 
-
 // ==================================== Operation ====================================
 
 function animate() {
@@ -177,8 +167,7 @@ function animate() {
   update();
   requestAnimationFrame(animate);
 }
-animate();
-
+animate()
 
 // ===================================== Resize =====================================
 
@@ -186,7 +175,6 @@ window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 });
-
 
 // ================================= Dark Mode Toggle =================================
 
@@ -200,7 +188,9 @@ if (toggleBtn) {
     updateColors(); 
   });
 }
+
 // ================================ Typing Text ======================================
+
 const heroText1 = "Hello, I'm ";
 const heroText2 = "TAIF";
 
@@ -243,7 +233,6 @@ function heroTyping() {
       hi--;
       return setTimeout(heroTyping, 25);
     }
-
     heroDeleting = false;
     return setTimeout(heroTyping, 400);
   }
@@ -251,7 +240,7 @@ function heroTyping() {
 
 heroTyping();
 
-// ===================================================================================
+// ================================ Typing Name ======================================
 
 const aboutText = "I'm Taif Alanzi";
 
@@ -280,10 +269,11 @@ function aboutTyping() {
       ai--;
       return setTimeout(aboutTyping, 30);
     }
-
     aboutDeleting = false;
     return setTimeout(aboutTyping, 500);
   }
 }
 
 aboutTyping();
+
+// ===================================================================================
