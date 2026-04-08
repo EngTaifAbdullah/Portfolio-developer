@@ -201,59 +201,89 @@ if (toggleBtn) {
   });
 }
 // ================================ Typing Text ======================================
+const heroText1 = "Hello, I'm ";
+const heroText2 = "TAIF";
 
-const text1 = "Hello, I'm ";
-const text2 = "TAIF";
+let hi = 0;
+let hj = 0;
+let heroDeleting = false;
 
-let i = 0;
-let j = 0;
-let isDeleting = false;
+const heroTextEl = document.querySelector(".text");
+const heroNameEl = document.querySelector(".name");
 
-const textEl = document.querySelector(".text");
-const nameEl = document.querySelector(".name");
+function heroTyping() {
 
-function typeLoop() {
+  if (!heroDeleting) {
 
-  if (!isDeleting) {
-    // يكتب
-    if (i < text1.length) {
-      textEl.textContent += text1[i];
-      i++;
-      return setTimeout(typeLoop, 40);
+    if (hi < heroText1.length) {
+      heroTextEl.textContent += heroText1[hi];
+      hi++;
+      return setTimeout(heroTyping, 40);
     }
 
-    if (j < text2.length) {
-      nameEl.textContent += text2[j];
-      j++;
-      return setTimeout(typeLoop, 70);
+    if (hj < heroText2.length) {
+      heroNameEl.textContent += heroText2[hj];
+      hj++;
+      return setTimeout(heroTyping, 70);
     }
 
-    // توقف قبل الحذف
-    isDeleting = true;
-    return setTimeout(typeLoop, 1500);
-  }
+    heroDeleting = true;
+    return setTimeout(heroTyping, 1500);
 
-  else {
-    // يمسح
-    if (j > 0) {
-      nameEl.textContent = text2.substring(0, j - 1);
-      j--;
-      return setTimeout(typeLoop, 40);
+  } else {
+
+    if (hj > 0) {
+      heroNameEl.textContent = heroText2.substring(0, hj - 1);
+      hj--;
+      return setTimeout(heroTyping, 40);
     }
 
-    if (i > 0) {
-      textEl.textContent = text1.substring(0, i - 1);
-      i--;
-      return setTimeout(typeLoop, 25);
+    if (hi > 0) {
+      heroTextEl.textContent = heroText1.substring(0, hi - 1);
+      hi--;
+      return setTimeout(heroTyping, 25);
     }
 
-    // يعيد من البداية
-    isDeleting = false;
-    return setTimeout(typeLoop, 400);
+    heroDeleting = false;
+    return setTimeout(heroTyping, 400);
   }
 }
 
-typeLoop();
+heroTyping();
 
 // ===================================================================================
 
+const aboutText = "I'm Taif Alanzi";
+
+let ai = 0;
+let aboutDeleting = false;
+
+const aboutEl = document.querySelector("#about .text");
+
+function aboutTyping() {
+
+  if (!aboutDeleting) {
+
+    if (ai < aboutText.length) {
+      aboutEl.textContent += aboutText.charAt(ai);
+      ai++;
+      return setTimeout(aboutTyping, 50);
+    }
+
+    aboutDeleting = true;
+    return setTimeout(aboutTyping, 1500);
+
+  } else {
+
+    if (ai > 0) {
+      aboutEl.textContent = aboutText.substring(0, ai - 1);
+      ai--;
+      return setTimeout(aboutTyping, 30);
+    }
+
+    aboutDeleting = false;
+    return setTimeout(aboutTyping, 500);
+  }
+}
+
+aboutTyping();
