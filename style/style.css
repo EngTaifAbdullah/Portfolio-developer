@@ -121,7 +121,6 @@ nav a:hover {
 
 /* ========================================= HOME ========================================= */
 
-
 .hero {
   text-align: center;
   padding: 120px 20px;
@@ -148,7 +147,6 @@ nav a:hover {
   text-align: center; /* لتوسيط المسميات */
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
-
 
 /* ========================================== BUTTON ========================================== */
 
@@ -194,8 +192,45 @@ nav a:hover {
   50% { transform: translateY(9px); }
 }
 
+ 
+/* ========================================== CURSOR ========================================== */
 
-/* ====================================== GLASS SECTIONS ====================================== */
+/* indicator او المؤشر */
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #22d3ee;
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: 0.15s ease;
+}
+
+/* ========================================== TYPING ========================================== */
+
+.typing {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.typing .text {
+  color: #22d3ee; 
+}
+
+.typing::after {
+  content: "|";
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* =================================== GLASS SECTIONS =================================== */
 
 .glass {
   margin: 40px;
@@ -212,7 +247,6 @@ nav a:hover {
   box-shadow: 0 0 50px #22d3ee, 0 0 30px #a78bfa;
   perspective: 1000px; 
 } 
-
 
 /* ====================================== ABOUT ====================================== */
 
@@ -297,11 +331,6 @@ nav a:hover {
   animation: blink 0.7s infinite;
 }
 
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
 /* Responsive */
 
 @media (max-width: 768px) {
@@ -313,6 +342,10 @@ nav a:hover {
   .about-cards {
     grid-template-columns: 1fr;
   }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 /* ====================================== TECH STACK ====================================== */
@@ -360,6 +393,12 @@ nav a:hover {
   color: #22d3ee;
   font-size: 30px;
 }
+/* ======================================= EXPERIENCE ======================================= */
+
+
+
+
+
 
 /* ====================================== PROJECT GRID ====================================== */
 
@@ -401,45 +440,6 @@ nav a:hover {
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
-}
- 
-/* =========================================== CURSOR ========================================== */
-
-/* indicator او المؤشر */
-.cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #22d3ee;
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: 0.15s ease;
-}
-
-/* ==================================== TYPING ================================================ */
-
-.typing {
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* النص العادي */
-.typing .text {
-  color: #22d3ee; 
-}
-
-/* المؤشر */
-.typing::after {
-  content: "|";
-  margin-left: 5px;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
 }
 
 /* =========================================== Contact ========================================= */
@@ -510,10 +510,8 @@ nav a:hover {
   transform: scale(1.2);
 }
 
-
 /* ======================================== LIGHT MODE ======================================== */
 
-/* Dark Mode Overrides */
 body.dark-mode .typing .text {
   color: #1f2937; 
 }
@@ -615,6 +613,8 @@ body.dark-mode .icon:hover {
   box-shadow: 0 0 20px #1e1549c7;
 }
 
+/* GPA and color Name ----------------------------------- */
+
 body.dark-mode #about .typing .text {
   color: rgba(116, 42, 150, 0.868);
 }
@@ -660,7 +660,6 @@ body.dark-mode #space::after {
 .dark-mode .contact-form button:hover {
   box-shadow: 0 0 40px #1e1549c7;
 }
-
 
 /* ============================================================================================== */
 
