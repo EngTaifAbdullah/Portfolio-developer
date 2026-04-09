@@ -57,20 +57,130 @@ section {
 }
 
 /* ========================================= HEADER / NAV ========================================= */
+/* ================= ULTRA NAVBAR ================= */
 
-header {
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  backdrop-filter: blur(20px);
+  background: rgba(10,15,30,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Glow border */
+.header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg,#22d3ee,#a78bfa,#22d3ee);
+  opacity: 0.4;
+}
+
+.nav-container {
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
-  position: sticky;
-  top: 0;
+  align-items: center;
+  padding: 18px 50px;
+}
 
-  background: rgba(15,23,42,0.6);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  border-radius: 0 0 15px 15px;
-  z-index: 100;
+/* LOGO */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* MENU */
+.nav-menu {
+  position: relative;
+  display: flex;
+  gap: 30px;
+}
+
+/* LINKS */
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: 0.3s ease;
+}
+
+/* hover glow */
+.nav-link:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #22d3ee;
+}
+
+/* active */
+.nav-link.active {
+  color: #fff;
+}
+
+/* MAGIC HOVER BACKGROUND */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg,#22d3ee33,#a78bfa33);
+  opacity: 0;
+  transition: 0.3s;
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  opacity: 1;
+}
+
+/* INDICATOR */
+.nav-indicator {
+  position: absolute;
+  bottom: -6px;
+  height: 3px;
+  width: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  box-shadow: 0 0 10px #22d3ee;
+  transition: all 0.35s ease;
+}
+
+/* MOBILE */
+.menu-toggle {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .nav-menu {
+    position: absolute;
+    top: 80px;
+    right: 20px;
+    flex-direction: column;
+    background: rgba(10,15,30,0.95);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    display: none;
+    gap: 15px;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
 }
 
 #mode-toggle {
@@ -83,40 +193,6 @@ header {
   cursor: pointer;
   font-size: 20px;           
   color: inherit;           
-}
-
-/* NAV LINKS */
-nav a {
-  margin-left: 25px;
-  color: #94a3b8;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: 0.3s;
-  position: relative;
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #22d3ee;
-  transition: 0.3s;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-nav a:hover {
-  color: #22d3ee;
-  background: rgba(34,211,238,0.1);
-  backdrop-filter: blur(5px);
-  box-shadow: 0 0 15px #22d3ee80, 0 0 25px #a78bfa50;
 }
 
 /* ========================================= HOME ========================================= */
@@ -268,7 +344,7 @@ nav a:hover {
   opacity: 0.8;
   line-height: 1.6;
   margin-bottom: 10px;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .about-cards {
@@ -396,99 +472,94 @@ nav a:hover {
 
 /* ======================================= EXPERIENCE ======================================= */
 
-.experience-cards {
-  display: flex;
-  flex-direction: column;      /* تصطف عمودياً */
-  gap: 20px;                   /* مسافة بين الكروت */
-  padding: 0px;
-  margin: 0 auto;
-  max-width: 550px;            /* ضبط أقصى عرض للكارد */
+.timeline {
+  position: relative;
+  margin-top: 30px;
+  padding-left: 30px;
+  border-left: 2px solid rgba(255,255,255,0.1);
 }
 
-.experience-cards .card {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px 25px;
-  border-radius: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-  width: 100%;                /* الكارد يمتد على كامل الحاوية */
-  min-height: 20px;          /* ارتفاع موحد */
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
 }
 
-.card:hover {
-  transform: translateY(-6px) scale(1.02);
+.timeline-dot {
+  position: absolute;
+  left: -9px;
+  top: 5px;
+  width: 14px;
+  height: 14px;
+  background: #22d3ee;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #22d3ee;
 }
 
-.card-header {
+.timeline-content {
+  background: rgba(255,255,255,0.05);
+  padding: 18px 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(34,211,238,0.2);
+}
+
+/* الصف العلوي */
+.top-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
 }
 
-.card-header h4 {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.0rem;
-  font-weight: 600;
-  line-height: 1.3;
+.top-row h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
-.card-header h4 span {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  font-weight: 400;
-}
-
-.company-logo {
-  width: 70px;
-  height: 70px;
+.top-row img {
+  width: 75px;
+  height: 75px;
   object-fit: contain;
-  border-radius: 10px;
-  padding: 5px;
-  transition: transform 0.3s ease;
-  margin-left: 15px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
-.card:hover .company-logo {
-  transform: scale(1.05);
-}
-
-.card p {
-  font-size: 0.95rem;
-  opacity: 0.85;
-  line-height: 1.5;
+/* الدور */
+.role {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
   margin-top: 5px;
 }
 
-.card-duration {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.6);
-  margin-top: 3px;
+/* التاريخ */
+.date {
+  display: block;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-bottom: 8px;
 }
 
-/* ============ Responsive ============ */
+/* الوصف */
+.timeline-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 768px) {
-  .experience-cards {
-    max-width: 90%;            
+  .timeline {
+    padding-left: 20px;
   }
 
-  .company-logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .card-header h4 {
-    font-size: 1rem;
-  }
-
-  .card-duration {
-    font-size: 0.8rem;
+  .top-row img {
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -723,6 +794,10 @@ body.dark-mode .card i{
   transition: 0.3s;
 }
 
+body.dark-mode .card {
+  background: rgba(255,255,255,0.6);
+}
+
 body.dark-mode .card:hover i{
   font-size: 1.2rem;
   margin-right: 8px;
@@ -759,6 +834,43 @@ body.dark-mode #space::after {
 
 .dark-mode .contact-form button:hover {
   box-shadow: 0 0 40px #1e1549c7;
+}
+
+/* EXPERIENCE -------------------------------- */
+
+body.dark-mode .timeline {
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+body.dark-mode .timeline-dot {
+  background: rgb(171, 41, 232);
+  box-shadow: 0 0 10px  rgb(171, 41, 232);
+}
+
+body.dark-mode .timeline-content {
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+body.dark-mode .timeline-content:hover {
+  box-shadow: 0 0 25px rgba(30, 21, 73, 0.2);
+}
+
+/* النصوص */
+body.dark-mode .top-row h3 {
+  color: #1f2937;
+}
+
+body.dark-mode .role {
+  color: #374151;
+}
+
+body.dark-mode .date {
+  color: #6b7280;
+}
+
+body.dark-mode .timeline-content p {
+  color: #374151;
 }
 
 /* ============================================================================================== */

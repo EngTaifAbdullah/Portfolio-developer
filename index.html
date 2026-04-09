@@ -26,16 +26,29 @@
 
 <!--===================================== HEADER AND NAV =====================================-->
 
-<header>
-  <h1 class="logo">TA</h1>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#tech">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <button id="mode-toggle">☀️</button> 
+<header class="header">
+  <div class="nav-container">
+
+    <h1 class="logo"></h1>
+
+    <nav class="nav-menu" id="nav-menu">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#tech" class="nav-link">Skills</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+
+      <span class="nav-indicator"></span>
+    </nav>
+
+    <button id="mode-toggle">☀️</button>
+
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="ri-menu-4-line"></i>
+    </div>
+
+  </div>
 </header>
 
 <!--=========================================== HERO =========================================-->
@@ -125,30 +138,47 @@
 </section>
 
 <!--========================================== EXPERIENCE =========================================-->
-
 <section id="experience" class="glass reveal">
   <h2>Experience</h2>
 
-  <div class="experience-cards">
+  <div class="timeline">
 
-    <div class="card">
-      <div class="card-header">
-        <h4><i class="ri-briefcase-line"></i> King Fahad Midecal City | COOP </h4>
-        <img src="./images/KFMC.png" alt="KFMC" class="company-logo">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+        <div class="top-row">
+          <h3>King Fahad Medical City</h3>
+          <img src="./images/KFMC.png" alt="KFMC">
+        </div>
+
+        <span class="role">Web Development Intern</span>
+        <span class="date">Jun 2020 – Dec 2022</span>
+
+        <p>
+          Worked on building automation tools and data analysis pipelines using Python.
+        </p>
       </div>
-      <p>Web Devolepment | Jun 2020 - Dec 2022</p>
-      <p>Worked on building automation tools and data analysis pipelines using Python.</p>
     </div>
 
-    
-    <div class="card">
-      <div class="card-header">
-        <h4><i class="ri-briefcase-line"></i> Saudi Digital Acadimy SDA | Bootcamp </h4>
-        <img src="./images/SDA.png" alt="SDA Logo" class="company-logo">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+
+      <div class="timeline-content">
+        <div class="top-row">
+          <h3>Saudi Digital Academy (SDA)</h3>
+          <img src="./images/SDA.png" alt="SDA">
+        </div>
+
+        <span class="role">Software Development Bootcamp</span>
+        <span class="date">Aug 2025 – Nov 2025</span>
+
+        <p>
+          Built full-stack applications using React and Django, and worked on real-world projects.
+        </p>
       </div>
-      <p>Software Development using Python | Aug 2025 - Nov 2025</p>
-      <p>Assisted in creating dashboards and analyzing large datasets to improve business decisions.</p>
     </div>
+
   </div>
 </section>
 

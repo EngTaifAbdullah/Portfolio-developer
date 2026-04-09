@@ -276,4 +276,77 @@ function aboutTyping() {
 
 aboutTyping();
 
+
+
+
+
+
+
+
+
+
+
+
+
+const links = document.querySelectorAll(".nav-link");
+const indicator = document.querySelector(".nav-indicator");
+
+// تحريك الخط
+function moveIndicator(el) {
+  indicator.style.width = el.offsetWidth + "px";
+  indicator.style.left = el.offsetLeft + "px";
+}
+
+// أول تحميل
+moveIndicator(document.querySelector(".nav-link.active"));
+
+// عند الضغط
+links.forEach(link => {
+  link.addEventListener("click", () => {
+    links.forEach(l => l.classList.remove("active"));
+    link.classList.add("active");
+    moveIndicator(link);
+  });
+});
+
+// ===== SCROLL SPY (احترافي 🔥) =====
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 120;
+    const sectionHeight = section.clientHeight;
+
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  links.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+      moveIndicator(link);
+    }
+  });
+});
+
+// ===== MOBILE =====
+
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
+
+toggle.addEventListener("click", () => {
+  menu.classList.toggle("active");
+});
+
+
+
+
+
+
+
 // ===================================================================================
