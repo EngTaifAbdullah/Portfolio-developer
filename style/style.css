@@ -57,7 +57,6 @@ section {
 }
 
 /* ========================================= HEADER / NAV ========================================= */
-/* ================= ULTRA NAVBAR ================= */
 
 .header {
   position: fixed;
@@ -147,7 +146,7 @@ section {
   height: 3px;
   width: 0;
   border-radius: 10px;
-  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  background: linear-gradient(90deg,#22d3ee,#9e80f7);
   box-shadow: 0 0 10px #22d3ee;
   transition: all 0.35s ease;
 }
@@ -713,11 +712,26 @@ body.dark-mode nav a {
   color: #ffffff;
 }
 
+body.dark-mode .nav-indicator {
+  background: linear-gradient(90deg,#d57fed,#63a0d9);
+  box-shadow: 0 0 10px #63a0d9;
+}
+
+body.dark-mode .header::after {
+  background: linear-gradient(90deg,#f6189d,#268290,#f6189d);
+  border-radius: 8px;
+}
+
+body.dark-mode .nav-link::before {
+  background: linear-gradient(90deg,#00000033,#3905d433);
+  border-radius: 8px;
+}
+
+
 /* color font for MENU ------------------------------------ */
 
 body.dark-mode nav a:hover {
   color: #ffffff;
-  background: rgba(236,72,153,0.08);
   box-shadow: 0 0 40px #1e1549c7;
 
 }
@@ -757,9 +771,6 @@ body.dark-mode .cursor {
 body.dark-mode .magnetic {
   background: linear-gradient(90deg,#0f104880,#1e1549c7);
   color: #ffffff;
-  padding: 18px 35px;
-  border-radius: 400px;
-  transition: transform 0.2s, box-shadow 0.3s;
 }
 
 body.dark-mode .magnetic:hover {
@@ -788,10 +799,7 @@ body.dark-mode .about h3 {
 }
 
 body.dark-mode .card i{
-  font-size: 1.2rem;
-  margin-right: 8px;
   color: rgb(171, 41, 232);
-  transition: 0.3s;
 }
 
 body.dark-mode .card {
@@ -799,10 +807,7 @@ body.dark-mode .card {
 }
 
 body.dark-mode .card:hover i{
-  font-size: 1.2rem;
-  margin-right: 8px;
   color: rgb(106, 4, 74);
-  transition: 0.3s;
 }
 
 /* Background color space -------------------------------- */
