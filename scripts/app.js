@@ -278,13 +278,7 @@ function aboutTyping() {
 aboutTyping();
 
 
-
-
-
-
-
-
-
+// ================================ MENU Animations ======================================
 
 
 
@@ -310,7 +304,7 @@ links.forEach(link => {
   });
 });
 
-// ===== SCROLL SPY (احترافي 🔥) =====
+// ====================================== SCROLL SPY ======================================
 
 const sections = document.querySelectorAll("section");
 
@@ -335,7 +329,8 @@ window.addEventListener("scroll", () => {
   });
 });
 
-// ===== MOBILE =====
+// ===================================== MOBILE =====================================
+
 
 const toggle = document.getElementById("menu-toggle");
 const menu = document.getElementById("nav-menu");
@@ -343,11 +338,6 @@ const menu = document.getElementById("nav-menu");
 toggle.addEventListener("click", () => {
   menu.classList.toggle("active");
 });
-
-
-
-
-
 
 
 // ===================================================================================
