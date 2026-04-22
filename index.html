@@ -8,6 +8,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Taif Alanzi</title>
 <link rel="stylesheet" href="./style/style.css">
+<link rel="stylesheet" href="./project.html">
+<script src="./scripts/projects.js"></script>
+
+
 <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -17,7 +21,6 @@
 <!--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
 
 <body>
-
 <!-- Loader -->
 <div class="loader"></div>
 
@@ -146,7 +149,9 @@
 <!--========================================== EXPERIENCE =========================================-->
 
 <section id="experience" class="glass reveal">
+
   <h2>Experience</h2>
+
   <div class="timeline">
     <div class="timeline-item">
       <div class="timeline-dot"></div>
@@ -185,52 +190,156 @@
   </div>
 </section>
 
-<!--========================================== PROJECTS =========================================-->
+<!--============================================= PROJECTS ============================================-->
+
 
 <section id="projects" class="glass reveal">
-  <h2>Projects</h2>
 
-  <div class="projects-container">
+  <div class="projects-wrapper">
+    <button class="slider-btn prev" onclick="scrollProjects(-1)">‹</button>
+    <div class="projects-container" id="projectsContainer">
 
-    <!-- Project 1 -->
-    <div class="project-card">
-      <img src="./images/project1.jpg" alt="Project Image">
+<!-- ------------------------------------------------------------------------- -->
 
-      <div class="project-content">
-        <h3>LifeStack Platform</h3>
-        <p>Task and goal management web app built with React & Django.</p>
+      <!-- CARD 1 -->
+      <div class="project-card">
+        <div class="project-top">
 
-        <a href="#" class="project-btn">More Details</a>
+          <div class="project-number">01</div>
+          <div class="project-client">PERSONAL PROJECT<br></div>
+        </div>
+
+        <div class="project-status">Completed</div>
+
+        <div class="project-title">LifeStack Platform</div>
+        <div class="project-desc">
+          Smart productivity system with analytics and AI features.
+        </div>
+
+        <div class="tags">
+          <div class="tag">React</div>
+          <div class="tag">Node</div>
+          <div class="tag">MongoDB</div>
+        </div>
+
+        <div class="project-image">
+          <img src="./images/project1.jpg">
+        </div>
       </div>
-    </div>
 
-    <!-- Project 2 -->
-    <div class="project-card">
-      <img src="./images/project3.JPG" alt="Project Image">
+<!-- ------------------------------------------------------------------------- -->
 
-      <div class="project-content">
-        <h3>Sabeel Platform</h3>
-        <p>Interactive platform to teach English for deaf learners.</p>
-        <a href="#" class="project-btn">More Details</a>
+      <!-- CARD 2 -->
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-number">02</div>
+          <div class="project-client">PERSONAL PROJECT<br></div>
+        </div>
+
+        <div class="project-status">Completed</div>
+        <div class="project-title">Sabeel Platform</div>
+
+        <div class="project-desc">
+          Smart productivity system with analytics and AI features.
+        </div>
+
+        <div class="tags">
+          <div class="tag">React</div>
+          <div class="tag">Node</div>
+          <div class="tag">MongoDB</div>
+        </div>
+
+        <div class="project-image">
+          <img src="./images/project3.JPG">
+        </div>
       </div>
-    </div>
 
+<!-- ------------------------------------------------------------------------- -->
 
+      <!-- CARD 3 -->
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-number">03</div>
+          <div class="project-client">PERSONAL PROJECT<br></div>
+        </div>
 
-   <!-- Project 3 -->
-    <div class="project-card">
-      <img src="./images/project2.jpg" alt="Project Image">
+        <div class="project-status">Completed</div>
 
-      <div class="project-content">
-        <h3>Sabeel Platform</h3>
-        <p>Interactive platform to teach English for deaf learners.</p>
+        <div class="project-title">Excel Dashboard</div>
+        <div class="project-desc">
+          Interactive learning platform with modern UI.
+        </div>
 
-        <a href="#" class="project-btn">More Details</a>
+        <div class="tags">
+          <div class="tag">HTML</div>
+          <div class="tag">CSS</div>
+          <div class="tag">JS</div>
+        </div>
+
+        <div class="project-image">
+          <img src="./images/project2.jpg">
+        </div>
       </div>
-    </div>
 
+<!-- ------------------------------------------------------------------------- -->
+
+      <!-- CARD 4 -->
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-number">04</div>
+          <div class="project-client">PERSONAL PROJECT<br></div>
+        </div>
+
+        <div class="project-status1">In Progress</div>
+
+        <div class="project-title">Mail Merage</div>
+        <div class="project-desc">
+          AI-powered analytics dashboard.
+        </div>
+
+        <div class="tags">
+          <div class="tag">Python</div>
+          <div class="tag">AI</div>
+          <div class="tag">API</div>
+        </div>
+
+        <div class="project-image">
+          <img src="./images/project3.JPG">
+        </div>
+      </div>
+
+<!-- ------------------------------------------------------------------------- -->
+      
+      <!-- CARD 5 -->
+      <div class="project-card">
+        <div class="project-top">
+          <div class="project-number">05</div>
+          <div class="project-client">PERSONAL PROJECT<br></div>
+        </div>
+
+        <div class="project-status1">In Progress</div>
+
+        <div class="project-title">Dose Care</div>
+        <div class="project-desc">
+           A smart medication reminder app designed to help seniors take their doses on time, improving safety and daily health management.
+        </div>
+
+        <div class="tags">
+          <div class="tag">Python</div>
+          <div class="tag">AI</div>
+          <div class="tag">API</div>
+        </div>
+
+        <div class="project-image">
+          <img src="./images/DoseCare.png">
+        </div>
+      </div>
+
+    </div>
+    <button class="slider-btn next" onclick="scrollProjects(1)">›</button>
   </div>
 </section>
+
 
 <!--============================================= CONTACT =============================================-->
 
@@ -277,3 +386,5 @@
 </html>
 
 <!-- ==================================================================================================-->
+
+
