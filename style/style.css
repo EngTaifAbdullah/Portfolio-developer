@@ -408,30 +408,79 @@ section {
 
 /* ====================================== TECH STACK ====================================== */
 
-.skills {
-  margin-top: 30px;
+.tools-section {
+  text-align: left;
 }
 
-.icons {
+/* العنوان */
+.tools-title {
+  font-size: 40px;
+  font-weight: 800;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+
+/* wrapper يخفي الأطراف */
+.tools-track {
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+/* الصف */
+.tools-row {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  gap: 25px;
+  width: max-content;
 }
 
-.icon {
-  padding: 10px 18px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+/* الكرت */
+.tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  min-width: 170px;
+  white-space: nowrap;
   transition: 0.3s;
-  cursor: pointer;
 }
 
-.icon:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 0 20px #22d3ee;
+
+/* icon */
+.tool img {
+  width: 32px;
+  height: 32px;
+}
+
+/* النص */
+.tool span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* ================= MOVEMENT ================= */
+
+/* الصف الأول يمشي يمين */
+.row1 {
+  animation: moveLeft 9s linear infinite;
+}
+
+/* الصف الثاني عكس */
+.row2 {
+  animation: moveRight 9s linear infinite;
+}
+
+/* الحركة */
+@keyframes moveLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes moveRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 /* ========================================= STATS ========================================= */
@@ -909,14 +958,12 @@ body.dark-mode .magnetic:hover {
 
 /* لون الايقونات وبوردرها  ----------------------------- */
 
-body.dark-mode .icon {
+body.dark-mode .tool {
   background: rgba(255,255,255,0.6);
   border: 1px solid rgba(0,0,0,0.05);
 }
 
-body.dark-mode .icon:hover {
-  box-shadow: 0 0 20px #1e1549c7;
-}
+
 
 /* GPA and color Name ----------------------------------- */
 
