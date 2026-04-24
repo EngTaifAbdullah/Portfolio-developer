@@ -619,7 +619,7 @@ section {
 }
 
 .project-card {
-  min-width: 360px;
+  min-width: 400px;
   border-radius: 30px;
   padding: 25px;
   background: rgba(255, 255, 255, 0.04);
@@ -744,6 +744,7 @@ section {
 
 .prev { left: -20px; }
 .next { right: -20px; }
+
 
 
 
