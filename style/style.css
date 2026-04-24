@@ -456,7 +456,7 @@ section {
 
 /* النص */
 .tool span {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
 }
 
@@ -464,12 +464,12 @@ section {
 
 /* الصف الأول يمشي يمين */
 .row1 {
-  animation: moveLeft 9s linear infinite;
+  animation: moveLeft 10s linear infinite;
 }
 
 /* الصف الثاني عكس */
 .row2 {
-  animation: moveRight 9s linear infinite;
+  animation: moveRight 10s linear infinite;
 }
 
 /* الحركة */
