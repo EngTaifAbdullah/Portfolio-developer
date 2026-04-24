@@ -343,6 +343,11 @@ toggle.addEventListener("click", () => {
 // ===================================================================================
 
 
+// Video hover play/pause
+// Auto play all videos
+document.querySelectorAll(".project-image video").forEach(video => {
+  video.play();
+});
 
 
 

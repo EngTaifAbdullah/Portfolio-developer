@@ -721,6 +721,11 @@ section {
   width: 100%;
   display: block;
 }
+.project-image video {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+}
 
 /* BUTTONS لفت ورايت */
 
@@ -728,12 +733,12 @@ section {
   position: absolute;
   top: 45%;
   transform: translateY(-50%);
-  width: 45px;
-  height: 45px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.217);
-  border: 1px solid rgba(255, 255, 255, 0.224);
-  color: #00ffff;
+  background: rgba(255, 255, 255, 0.066);
+  border: 1px solid rgba(255, 255, 255, 0.21);
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -1057,9 +1062,13 @@ body.dark-mode .project-title {
 }
 
 body.dark-mode .tag {
-  background: rgba(212, 211, 211, 0.253);
-  color: #0000005f;
+  background: rgba(212, 211, 211, 0.379);
+  color: #00000063;
+}
 
+body.dark-mode .slider-btn{
+  border: 1px solid rgba(0, 0, 0, 0.21);
+  color: #000000;
 }
 
 /* Contact me -------------------------------- */
