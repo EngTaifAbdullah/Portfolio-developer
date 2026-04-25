@@ -267,7 +267,6 @@ section {
   50% { transform: translateY(9px); }
 }
 
- 
 /* ========================================== CURSOR ========================================== */
 
 /* indicator او المؤشر */
@@ -447,7 +446,6 @@ section {
   transition: 0.3s;
 }
 
-
 /* icon */
 .tool img {
   width: 32px;
@@ -580,7 +578,6 @@ section {
   line-height: 1.6;
   opacity: 0.85;
 }
-
 
 /* ====================================== PROJECT GRID ====================================== */
 
@@ -746,8 +743,6 @@ section {
 .next { right: -20px; }
 
 
-
-
 /* ====================================== REVEAL ON SCROLL ====================================== */
 
 /* مدة ظهور الصفحة المطلوبة */
@@ -831,9 +826,7 @@ section {
   transform: scale(1.2);
 }
 
-
 /* ======================================== RESPONSIVE ======================================== */
-
 
 @media (max-width: 768px) {
   .about-container {
@@ -968,7 +961,6 @@ body.dark-mode .tool {
   background: rgba(255,255,255,0.6);
   border: 1px solid rgba(0,0,0,0.05);
 }
-
 
 
 /* GPA and color Name ----------------------------------- */
