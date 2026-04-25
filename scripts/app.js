@@ -361,4 +361,5 @@ prevBtn.addEventListener("click", () => {
   container.scrollBy({ left: -cardWidth, behavior: "smooth" });
 });
 
+
 // ===================================================================================

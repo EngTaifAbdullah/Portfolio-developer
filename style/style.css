@@ -581,7 +581,6 @@ section {
 
 /* ====================================== PROJECT GRID ====================================== */
 
-
 /* ===== SECTION ===== */
 .projects-section {
   padding: 80px 5%;
@@ -834,6 +833,7 @@ section {
 }
 
 /* ======================================== RESPONSIVE ======================================== */
+
 @media (max-width: 768px) {
   .about-container {
     grid-template-columns: 1fr;
@@ -1145,6 +1145,5 @@ body.dark-mode .slider-btn{
 .dark-mode .contact-form button:hover {
   box-shadow: 0 0 40px #1e1549c7;
 }
-
 
 /* ============================================================================================== */
