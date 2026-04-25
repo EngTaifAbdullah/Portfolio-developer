@@ -280,8 +280,6 @@ aboutTyping();
 // ================================ MENU Animations ======================================
 
 
-
-
 const links = document.querySelectorAll(".nav-link");
 const indicator = document.querySelector(".nav-indicator");
 
@@ -352,3 +350,18 @@ document.querySelectorAll(".project-image video").forEach(video => {
 // ===================================================================================
 
 
+const container = document.querySelector(".projects-container");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+
+nextBtn.addEventListener("click", () => {
+  const card = document.querySelector(".project-card");
+  const cardWidth = card.offsetWidth + 20; // 20 = gap
+  container.scrollBy({ left: cardWidth, behavior: "smooth" });
+});
+
+prevBtn.addEventListener("click", () => {
+  const card = document.querySelector(".project-card");
+  const cardWidth = card.offsetWidth + 20;
+  container.scrollBy({ left: -cardWidth, behavior: "smooth" });
+});

@@ -743,6 +743,13 @@ section {
 .next { right: -20px; }
 
 
+.projects-container {
+  scroll-snap-type: x mandatory;
+}
+
+.project-card {
+  scroll-snap-align: center;
+}
 /* ====================================== REVEAL ON SCROLL ====================================== */
 
 /* مدة ظهور الصفحة المطلوبة */
@@ -852,8 +859,7 @@ section {
   50% { opacity: 0; }
 }
 
-
-
+/* -------------------------------------- */
 
 @media (max-width: 768px) {
 
