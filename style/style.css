@@ -827,7 +827,6 @@ section {
 }
 
 /* ======================================== RESPONSIVE ======================================== */
-
 @media (max-width: 768px) {
   .about-container {
     grid-template-columns: 1fr;
@@ -837,13 +836,7 @@ section {
   .about-cards {
     grid-template-columns: 1fr;
   }
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
 
-@media (max-width: 768px) {
   .timeline {
     padding-left: 20px;
   }
@@ -851,6 +844,74 @@ section {
   .top-row img {
     width: 35px;
     height: 35px;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+
+
+
+@media (max-width: 768px) {
+
+  /* 1. إصلاح النصوص الكبيرة */
+  .hero h2 { font-size: 32px; }
+  .typing { font-size: 28px; }
+  .hero p { font-size: 16px; }
+
+  /* 2. إصلاح المسافات */
+  .glass {
+    margin: 20px 10px;
+    padding: 20px;
+  }
+
+  /* 3. ABOUT */
+  .about-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .about-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 4. أهم نقطة 🔥 (الكروت) */
+  .card {
+    width: 100% !important;
+  }
+
+  /* 5. PROJECTS 🔥🔥 (سبب المشكلة عندك) */
+  .project-card {
+    min-width: 85% !important;
+  }
+
+  .projects-container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  /* 6. STATS */
+  .stats {
+    gap: 20px;
+  }
+
+  /* 7. TIMELINE */
+  .top-row img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* 8. BUTTON */
+  .magnetic {
+    font-size: 16px;
+    padding: 14px 25px;
+  }
+
+  /* 9. تعطيل المؤشر بالجوال */
+  body {
+    cursor: default;
   }
 }
 
