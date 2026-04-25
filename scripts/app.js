@@ -276,9 +276,7 @@ function aboutTyping() {
 
 aboutTyping();
 
-
 // ================================ MENU Animations ======================================
-
 
 const links = document.querySelectorAll(".nav-link");
 const indicator = document.querySelector(".nav-indicator");
@@ -339,16 +337,13 @@ toggle.addEventListener("click", () => {
 
 // ===================================== Video  =====================================
 
-
 // Video hover play/pause
 // Auto play all videos
 document.querySelectorAll(".project-image video").forEach(video => {
   video.play();
 });
 
-
-// ===================================================================================
-
+// ===================================== Scrol  =====================================
 
 const container = document.querySelector(".projects-container");
 const nextBtn = document.querySelector(".next");
@@ -365,3 +360,5 @@ prevBtn.addEventListener("click", () => {
   const cardWidth = card.offsetWidth + 20;
   container.scrollBy({ left: -cardWidth, behavior: "smooth" });
 });
+
+// ===================================================================================
