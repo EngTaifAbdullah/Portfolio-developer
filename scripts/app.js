@@ -1,4 +1,3 @@
-
 window.addEventListener("DOMContentLoaded", () => {
   updateColors(); // يحدث ألوان النقاط مباشرة على الوضع الافتراضي الفاتح
 });

@@ -51,6 +51,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+
 // 3D Cards
 document.querySelectorAll(".project-card").forEach(card => {
   card.addEventListener("mousemove", e => {
