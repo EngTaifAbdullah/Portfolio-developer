@@ -49,7 +49,7 @@ section {
   height: 100%;
   background: #0a174ae3;
   z-index: 999;
-  animation: fadeOut 3s forwards;
+  animation: fadeOut 1.5s forwards;
 }
 
 @keyframes fadeOut {
