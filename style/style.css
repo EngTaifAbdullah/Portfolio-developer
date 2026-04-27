@@ -235,7 +235,7 @@ section {
   color: #ffffff;
   padding: 18px 35px;
   font-size: 15px;
-  font-weight: bold;
+  /* font-weight: bold; */
   border-radius: 400px;
   text-decoration: none;
   border: none;
