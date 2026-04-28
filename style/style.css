@@ -262,9 +262,10 @@ section {
   animation: float 1.5s infinite ease-in-out;
 }
 
+/* حركط السهم ونطنطته */
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(9px); }
+  50% { transform: translateY(8px); }
 }
 
 /* ========================================== CURSOR ========================================== */
